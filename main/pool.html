@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--=============================-->
+    <!-- Copy this part to your app. -->
+    <!-- START                       -->
+    <!--=============================-->
+    <!-- libs -->
+    <!--[if IE]><script type="text/javascript" src="lib/excanvas.js"></script><![endif]-->
+    <script src="lib/prototype-1.6.0.2.js"></script>
+
+    <!-- box2djs -->
+    <script type="text/javascript" src="Box2dWeb-2.1.a.3.js"></script>
+    <style>
+        #canvas {
+            top:260px;
+            left:125px;
+            background-color:#333333;
+        }
+        #centr {
+            text-align: center;
+        }
+    </style>
+    <title>KORPSE box2d test</title>
+</head>
+<body>
+    <div id="centr">
+        <canvas id="canvas" width="600" height="400"></canvas>
+    </div>
+    <script language="javascript" src="Context.js"></script>
+    <script language="javascript" src="World.js"></script>
+    <script language="javascript" src="Ball.js"></script>
+    <script language="javascript" src="UserController.js"></script>
+    <script language="javascript" src="BallFactory.js"></script>
+    <script language="javascript" src="PocketContactListener.js"></script>
+    <script language="javascript" src="korpse.js"></script>
+</body>
+</html>
