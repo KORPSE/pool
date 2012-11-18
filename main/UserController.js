@@ -10,8 +10,8 @@ function UserController(elm, ball) {
     var pressed = false;
 
     Event.observe(elm, 'mousedown', function(e) {
-        x0 = (Event.pointerX(e) - elm.offsetLeft) / 30,
-        y0 = (Event.pointerY(e) - elm.offsetTop) / 30;
+        x0 = (Event.pointerX(e) - elm.offsetLeft) / SCALE,
+        y0 = (Event.pointerY(e) - elm.offsetTop) / SCALE;
 
         cx = ball.getBody().GetPosition().x - x0;
         cy = ball.getBody().GetPosition().y - y0;
@@ -23,8 +23,8 @@ function UserController(elm, ball) {
 
     Event.observe(document, 'mouseup', function(e) {
         if(pressed) {
-            x = (Event.pointerX(e) - elm.offsetLeft) / 30,
-            y = (Event.pointerY(e) - elm.offsetTop) / 30;
+            x = (Event.pointerX(e) - elm.offsetLeft) / SCALE,
+            y = (Event.pointerY(e) - elm.offsetTop) / SCALE;
             ball.applyImpulse(x0 - x, y0 - y, cx, cy);
             pressed = false;
         }

@@ -21,6 +21,7 @@ b2Math = Box2D.Common.b2Math;
 const BALL = 1;
 const POCKET = 2;
 const WALL = 3;
+const SCALE = 30;
 
 function PocketData() {
     this.getType = function () {
