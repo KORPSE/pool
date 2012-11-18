@@ -11,8 +11,11 @@ function World(ctx, canvasWidth, canvasHeight) {
     const D = 0.5;
     const D2 = 0.6;
     const W = 0.7;
+    const BW = 0.35;
     const FRICTION = 0.5;
     const RESTITUTION = 1.0;
+
+    var controller;
 
     var pockets = new Array();
     var bodiesToDestroy = new Array();
@@ -159,13 +162,13 @@ function World(ctx, canvasWidth, canvasHeight) {
         if (updown != 0) {
             polygon.push(new b2Vec2(x1, y1));
             polygon.push(new b2Vec2(x2, y2));
-            polygon.push(new b2Vec2(x2 - 0.4, y2 + 0.4 * updown));
-            polygon.push(new b2Vec2(x1 + 0.4, y1 + 0.4 * updown));
+            polygon.push(new b2Vec2(x2 - BW, y2 + BW * 0.8 * updown));
+            polygon.push(new b2Vec2(x1 + BW, y1 + BW * 0.8 * updown));
         } else {
             polygon.push(new b2Vec2(x1, y1));
             polygon.push(new b2Vec2(x2, y2));
-            polygon.push(new b2Vec2(x2 + 0.4 * leftright, y2 - 0.4));
-            polygon.push(new b2Vec2(x1 + 0.4 * leftright, y1 + 0.4));
+            polygon.push(new b2Vec2(x2 + BW * 0.8 * leftright, y2 - BW));
+            polygon.push(new b2Vec2(x1 + BW * 0.8 * leftright, y1 + BW));
         }
         if (updown != 0) {
             polygon.sort(function (item) {
@@ -193,18 +196,26 @@ function World(ctx, canvasWidth, canvasHeight) {
         return world;
     }
 
+    this.setController = function (c) {
+        controller = c;
+    }
+
     this.addToDestroy = function (body) {
         bodiesToDestroy.push(body);
     }
 
     this.update = function() {
 
-        world.Step(1/60, 10, 10);
+        world.Step(1/60, 20);
         world.DrawDebugData();
         world.ClearForces();
 
         while(bodiesToDestroy.length > 0) {
             world.DestroyBody(bodiesToDestroy.shift());
+        }
+
+        if (controller != null) {
+            controller.drawLine();
         }
     }
 

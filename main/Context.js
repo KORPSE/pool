@@ -29,11 +29,11 @@ function PocketData() {
     }
 }
 
-function BallData() {
+function BallData(b) {
     this.getType = function () {
         return BALL;
     }
-    this.activePocketFix = null;
+    this.ball = b;
 }
 
 function WallData() {

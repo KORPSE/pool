@@ -19,8 +19,8 @@ Event.observe(window, 'load', function() {
     ballFactory.createMany(
         [
             {x:4, y: 4},
-            {x:5, y: 3.25}, {x:5, y: 4.75},
-            {x:6, y: 2.5}, {x:6, y: 4}, {x:6, y: 5.5}
+            {x:4.7, y: 3.6}, {x:4.7, y: 4.4},
+            {x:5.4, y: 3.2}, {x:5.4, y: 4}, {x:5.4, y: 4.8}
         ]
     );
 
@@ -28,6 +28,7 @@ Event.observe(window, 'load', function() {
     world.getWorld().SetContactListener(listener);
 
     controller = new UserController(canvasElm, ball);
+    world.setController(controller);
 
     //ball.applyImpulse(5, 5);
     //ball1.applyImpulse(5, -5);
