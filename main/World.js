@@ -11,9 +11,9 @@ function World(ctx, canvasWidth, canvasHeight) {
     const D = 0.5;
     const D2 = 0.6;
     const W = 0.7;
-    const BW = 0.35;
+    const BW = D;
     const FRICTION = 0.5;
-    const RESTITUTION = 1.0;
+    const RESTITUTION = 0.9;
 
     var controller;
 

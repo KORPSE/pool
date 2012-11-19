@@ -11,13 +11,14 @@ function Ball(world, x, y) {
     const RADIUS = 0.35;
     const DAMPING = 0.6;
     const FORCECOEFF = 5;
+    const RESTITUTION = 1;
 
     var bodyDef = new b2BodyDef;
     var fixDef = new b2FixtureDef;
 
     fixDef.density = 0.9;
     fixDef.friction = 0.2;
-    fixDef.restitution = 0.9;
+    fixDef.restitution = RESTITUTION;
     bodyDef.type = b2Body.b2_dynamicBody;
     bodyDef.linearDamping = DAMPING;
     bodyDef.angularDamping = DAMPING * 2;
