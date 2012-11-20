@@ -23,6 +23,24 @@ const POCKET = 2;
 const WALL = 3;
 const SCALE = 30;
 
+/**
+ * Ball constants
+ */
+const BALL_RADIUS = 0.35;
+const BALL_DAMPING = 0.6;
+const BALL_FORCECOEFF = 5;
+const BALL_RESTITUTION = 1;
+
+/**
+ * World constants
+ */
+const WORLD_D = 0.5;
+const WORLD_D2 = 0.6;
+const WORLD_W = 0.7;
+const WORLD_BW = WORLD_D;
+const WORLD_FRICTION = 0.5;
+const WORLD_RESTITUTION = 0.9;
+
 function PocketData() {
     this.getType = function () {
         return POCKET;
@@ -34,6 +52,7 @@ function BallData(b) {
         return BALL;
     }
     this.ball = b;
+    this.onBorder = false;
 }
 
 function WallData() {

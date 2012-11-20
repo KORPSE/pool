@@ -8,13 +8,6 @@
 
 function World(ctx, canvasWidth, canvasHeight) {
 
-    const D = 0.5;
-    const D2 = 0.6;
-    const W = 0.7;
-    const BW = D;
-    const FRICTION = 0.5;
-    const RESTITUTION = 0.9;
-
     var controller;
 
     var pockets = new Array();
@@ -43,20 +36,20 @@ function World(ctx, canvasWidth, canvasHeight) {
         /*
             Walls
          */
-        fixDef.friction = FRICTION;
-        fixDef.restitution = RESTITUTION;
+        fixDef.friction = WORLD_FRICTION;
+        fixDef.restitution = WORLD_RESTITUTION;
 
         bodyDef.type = b2Body.b2_staticBody;
         fixDef.shape = new b2PolygonShape();
 
-        fixDef.shape.SetAsBox(canvasWidth / SCALE, W);
+        fixDef.shape.SetAsBox(canvasWidth / SCALE, WORLD_W);
         bodyDef.position.Set(canvasWidth / SCALE / 2, 0);
         world.CreateBody(bodyDef).CreateFixture(fixDef);
 
         bodyDef.position.Set(canvasWidth / SCALE / 2, canvasHeight / SCALE);
         world.CreateBody(bodyDef).CreateFixture(fixDef);
 
-        fixDef.shape.SetAsBox(W, canvasWidth / SCALE);
+        fixDef.shape.SetAsBox(WORLD_W, canvasWidth / SCALE);
         bodyDef.position.Set(0, canvasHeight / SCALE / 2);
         world.CreateBody(bodyDef).CreateFixture(fixDef);
 
@@ -69,28 +62,28 @@ function World(ctx, canvasWidth, canvasHeight) {
 
         var pockets = [
             {
-                p: new b2Vec2(W, W),
-                d: D2
+                p: new b2Vec2(WORLD_W, WORLD_W),
+                d: WORLD_D2
             },
             {
-                p: new b2Vec2(canvasWidth / 2 / SCALE, W),
-                d: D
+                p: new b2Vec2(canvasWidth / 2 / SCALE, WORLD_W),
+                d: WORLD_D
             },
             {
-                p: new b2Vec2((canvasWidth / SCALE) - W, W),
-                d: D2
+                p: new b2Vec2((canvasWidth / SCALE) - WORLD_W, WORLD_W),
+                d: WORLD_D2
             },
             {
-                p: new b2Vec2(W, canvasHeight / SCALE - W),
-                d: D2
+                p: new b2Vec2(WORLD_W, canvasHeight / SCALE - WORLD_W),
+                d: WORLD_D2
             },
             {
-                p: new b2Vec2(canvasWidth / 2 / SCALE, canvasHeight / SCALE - W),
-                d: D
+                p: new b2Vec2(canvasWidth / 2 / SCALE, canvasHeight / SCALE - WORLD_W),
+                d: WORLD_D
             },
             {
-                p: new b2Vec2(canvasWidth / SCALE - W, canvasHeight / SCALE - W),
-                d: D2
+                p: new b2Vec2(canvasWidth / SCALE - WORLD_W, canvasHeight / SCALE - WORLD_W),
+                d: WORLD_D2
             }
         ];
         pockets.each(function (item) {
@@ -99,38 +92,38 @@ function World(ctx, canvasWidth, canvasHeight) {
 
         var trapezes = [
             {
-                p1: new b2Vec2(W + D2, W),
-                p2: new b2Vec2(canvasWidth / 2 / SCALE - D, W),
+                p1: new b2Vec2(WORLD_W + WORLD_D2, WORLD_W),
+                p2: new b2Vec2(canvasWidth / 2 / SCALE - WORLD_D, WORLD_W),
                 updown: 1,
                 leftright: 0
             },
             {
-                p1: new b2Vec2(canvasWidth / 2 / SCALE + D, W),
-                p2: new b2Vec2(canvasWidth / SCALE - W - D2, W),
+                p1: new b2Vec2(canvasWidth / 2 / SCALE + WORLD_D, WORLD_W),
+                p2: new b2Vec2(canvasWidth / SCALE - WORLD_W - WORLD_D2, WORLD_W),
                 updown: 1,
                 leftright: 0
             },
             {
-                p1: new b2Vec2(W + D2, canvasHeight / SCALE - W),
-                p2: new b2Vec2(canvasWidth / 2 / SCALE - D, canvasHeight / SCALE - W),
+                p1: new b2Vec2(WORLD_W + WORLD_D2, canvasHeight / SCALE - WORLD_W),
+                p2: new b2Vec2(canvasWidth / 2 / SCALE - WORLD_D, canvasHeight / SCALE - WORLD_W),
                 updown: -1,
                 leftright: 0
             },
             {
-                p1: new b2Vec2(canvasWidth / 2 / SCALE + D, canvasHeight / SCALE - W),
-                p2: new b2Vec2(canvasWidth / SCALE - W - D2, canvasHeight / SCALE - W),
+                p1: new b2Vec2(canvasWidth / 2 / SCALE + WORLD_D, canvasHeight / SCALE - WORLD_W),
+                p2: new b2Vec2(canvasWidth / SCALE - WORLD_W - WORLD_D2, canvasHeight / SCALE - WORLD_W),
                 updown: -1,
                 leftright: 0
             },
             {
-                p1: new b2Vec2(W, W + D2),
-                p2: new b2Vec2(W, canvasHeight / SCALE - W - D2),
+                p1: new b2Vec2(WORLD_W, WORLD_W + WORLD_D2),
+                p2: new b2Vec2(WORLD_W, canvasHeight / SCALE - WORLD_W - WORLD_D2),
                 updown: 0,
                 leftright: 1
             },
             {
-                p1: new b2Vec2(canvasWidth / SCALE - W, W + D2),
-                p2: new b2Vec2(canvasWidth / SCALE - W, canvasHeight / SCALE - W - D2),
+                p1: new b2Vec2(canvasWidth / SCALE - WORLD_W, WORLD_W + WORLD_D2),
+                p2: new b2Vec2(canvasWidth / SCALE - WORLD_W, canvasHeight / SCALE - WORLD_W - WORLD_D2),
                 updown: 0,
                 leftright: -1
             }
@@ -162,13 +155,13 @@ function World(ctx, canvasWidth, canvasHeight) {
         if (updown != 0) {
             polygon.push(new b2Vec2(x1, y1));
             polygon.push(new b2Vec2(x2, y2));
-            polygon.push(new b2Vec2(x2 - BW, y2 + BW * 0.8 * updown));
-            polygon.push(new b2Vec2(x1 + BW, y1 + BW * 0.8 * updown));
+            polygon.push(new b2Vec2(x2 - WORLD_BW, y2 + WORLD_BW * 0.8 * updown));
+            polygon.push(new b2Vec2(x1 + WORLD_BW, y1 + WORLD_BW * 0.8 * updown));
         } else {
             polygon.push(new b2Vec2(x1, y1));
             polygon.push(new b2Vec2(x2, y2));
-            polygon.push(new b2Vec2(x2 + BW * 0.8 * leftright, y2 - BW));
-            polygon.push(new b2Vec2(x1 + BW * 0.8 * leftright, y1 + BW));
+            polygon.push(new b2Vec2(x2 + WORLD_BW * 0.8 * leftright, y2 - WORLD_BW));
+            polygon.push(new b2Vec2(x1 + WORLD_BW * 0.8 * leftright, y1 + WORLD_BW));
         }
         if (updown != 0) {
             polygon.sort(function (item) {
@@ -182,8 +175,8 @@ function World(ctx, canvasWidth, canvasHeight) {
         bodyPoly.SetAsArray(polygon);
         var bodyFix = new b2FixtureDef();
         bodyFix.shape = bodyPoly;
-        bodyFix.friction = FRICTION;
-        bodyFix.restitution = RESTITUTION;
+        bodyFix.friction = WORLD_FRICTION;
+        bodyFix.restitution = WORLD_RESTITUTION;
 
         bodyDef.position.Set(0, 0);
         bodyDef.shape = bodyPoly;
@@ -210,9 +203,26 @@ function World(ctx, canvasWidth, canvasHeight) {
         world.DrawDebugData();
         world.ClearForces();
 
+        var newBodiesToDestroy = new Array();
+
         while(bodiesToDestroy.length > 0) {
-            world.DestroyBody(bodiesToDestroy.shift());
+            var ballPocket = bodiesToDestroy.shift();
+            var ball = ballPocket.ball;
+            var pocket = ballPocket.pocket;
+            var vec0 = ball.GetPosition();
+            var vec1 = pocket.GetPosition();
+            var vec = new b2Vec2(vec0.x - vec1.x, vec0.y - vec1.y);
+            var len = Math.sqrt(vec.x * vec.x + vec.y * vec.y);
+            var pocketRadius = pocket.GetFixtureList().GetShape().GetRadius();
+            if (len < BALL_RADIUS + pocketRadius - BALL_RADIUS / 2) {
+                console.log("ball goes away");
+                world.DestroyBody(ball);
+            } else if (len < BALL_RADIUS + pocketRadius) {
+                newBodiesToDestroy.push(ballPocket);
+            }
         }
+
+        bodiesToDestroy = newBodiesToDestroy;
 
         if (controller != null) {
             controller.drawLine();

@@ -8,21 +8,16 @@
 
 function Ball(world, x, y) {
 
-    const RADIUS = 0.35;
-    const DAMPING = 0.6;
-    const FORCECOEFF = 5;
-    const RESTITUTION = 1;
-
     var bodyDef = new b2BodyDef;
     var fixDef = new b2FixtureDef;
 
     fixDef.density = 0.9;
     fixDef.friction = 0.2;
-    fixDef.restitution = RESTITUTION;
+    fixDef.restitution = BALL_RESTITUTION;
     bodyDef.type = b2Body.b2_dynamicBody;
-    bodyDef.linearDamping = DAMPING;
-    bodyDef.angularDamping = DAMPING * 2;
-    fixDef.shape = new b2CircleShape(RADIUS);
+    bodyDef.linearDamping = BALL_DAMPING;
+    bodyDef.angularDamping = BALL_DAMPING * 2;
+    fixDef.shape = new b2CircleShape(BALL_RADIUS);
     bodyDef.position.x = x;
     bodyDef.position.y = y;
     var ball = world.getWorld().CreateBody(bodyDef);
@@ -38,7 +33,7 @@ function Ball(world, x, y) {
     }
 
     this.applyImpulse = function (dx, dy, cx, cy) {
-        ball.ApplyImpulse(new b2Vec2(dx * FORCECOEFF, dy * FORCECOEFF), new b2Vec2(ball.GetPosition().x - cx, ball.GetPosition().y - cy));
+        ball.ApplyImpulse(new b2Vec2(dx * BALL_FORCECOEFF, dy * BALL_FORCECOEFF), new b2Vec2(ball.GetPosition().x - cx, ball.GetPosition().y - cy));
     }
 
 }

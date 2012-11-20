@@ -23,7 +23,7 @@
       <file leaf-file-name="Ball.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ball.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="26" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+            <state line="35" column="69" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-12.92">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="pool.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="423" selection-end="423" vertical-scroll-proportion="-0.65384614">
+            <state line="13" column="44" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,25 +50,25 @@
       <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="24" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+            <state line="34" column="13" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="World.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/World.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="27" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+            <state line="217" column="46" selection-start="7231" selection-end="7231" vertical-scroll-proportion="0.53571427">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PocketContactListener.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PocketContactListener.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PocketContactListener.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="31" selection-start="904" selection-end="904" vertical-scroll-proportion="0.49101797">
+            <state line="21" column="1" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="Context.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="45" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
+            <state line="54" column="25" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,12 +105,12 @@
         <option value="$PROJECT_DIR$/Board.js" />
         <option value="$PROJECT_DIR$/BallFactory.js" />
         <option value="$PROJECT_DIR$/pool.html" />
-        <option value="$PROJECT_DIR$/Context.js" />
         <option value="$PROJECT_DIR$/korpse.js" />
         <option value="$PROJECT_DIR$/UserController.js" />
         <option value="$PROJECT_DIR$/Ball.js" />
-        <option value="$PROJECT_DIR$/World.js" />
+        <option value="$PROJECT_DIR$/Context.js" />
         <option value="$PROJECT_DIR$/PocketContactListener.js" />
+        <option value="$PROJECT_DIR$/World.js" />
       </list>
     </option>
   </component>
@@ -194,12 +194,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pool.html" />
-    <property name="options.searchVisible" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -370,34 +370,6 @@
         <state line="112" column="16" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.33268481" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BallFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="24" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Context.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="26" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/prototype-1.6.0.2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="7" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.33333334">
@@ -407,7 +379,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="423" selection-end="423" vertical-scroll-proportion="-0.65384614">
+        <state line="13" column="44" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -433,16 +405,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/World.js">
+    <entry file="file://$PROJECT_DIR$/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+        <state line="34" column="13" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="69" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-12.92">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Context.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="25" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BallFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="27" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PocketContactListener.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="31" selection-start="904" selection-end="904" vertical-scroll-proportion="0.49101797">
+        <state line="21" column="1" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/World.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="46" selection-start="7231" selection-end="7231" vertical-scroll-proportion="0.53571427">
           <folding />
         </state>
       </provider>
