@@ -10,19 +10,15 @@ Event.observe(window, 'load', function() {
     var canvasWidth = parseInt(canvasElm.width);
     var canvasHeight = parseInt(canvasElm.height);
 
-    world = new World(ctx, 600, 400);
+    world = new World(ctx, canvasWidth, canvasHeight);
     world.initWorld();
     ballFactory = new BallFactory(world);
 
     var ball = ballFactory.createBall(3, 6.5);
 
-    ballFactory.createMany(
-        [
-            {x:4, y: 4},
-            {x:4.7, y: 3.6}, {x:4.7, y: 4.4},
-            {x:5.4, y: 3.2}, {x:5.4, y: 4}, {x:5.4, y: 4.8}
-        ]
-    );
+    var strategy = new RhombStrategy();
+
+    ballFactory.createMany(strategy.generate(new b2Vec2(3.5, 4)));
 
     listener = new PocketContactListener(world.getWorld());
     world.getWorld().SetContactListener(listener);

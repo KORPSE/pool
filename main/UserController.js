@@ -42,9 +42,6 @@ function UserController(elm, ball) {
     });
     Event.observe(document, 'mouseup', function(e) {
         if(pressed) {
-//            x = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
-//            y = (Event.pointerY(e) - elm.offsetTop) / SCALE;
-
             ball.applyImpulse(dx, dy, cx, cy);
             pressed = false;
         }

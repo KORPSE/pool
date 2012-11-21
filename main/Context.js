@@ -40,6 +40,7 @@ const WORLD_W = 0.7;
 const WORLD_BW = WORLD_D;
 const WORLD_FRICTION = 0.5;
 const WORLD_RESTITUTION = 0.9;
+const WORLD_MIN_SPEED = 0.15;
 
 function PocketData() {
     this.getType = function () {

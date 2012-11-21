@@ -224,6 +224,16 @@ function World(ctx, canvasWidth, canvasHeight) {
 
         bodiesToDestroy = newBodiesToDestroy;
 
+        var item = world.GetBodyList();
+
+        while (item != null) {
+            if (item.GetLinearVelocity().Length() < WORLD_MIN_SPEED && item.GetLinearVelocity().Length() > 0) {
+                console.log("stop");
+                item.SetLinearVelocity(new b2Vec2(0, 0));
+            }
+            item = item.GetNext();
+        }
+
         if (controller != null) {
             controller.drawLine();
         }
