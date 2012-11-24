@@ -29,7 +29,12 @@ function Ball(world, x, y) {
     }
 
     this.testPoint = function (x, y) {
-        return ballFixture.GetShape().TestPoint(ball.GetTransform(), new b2Vec2(x,y));
+        var shape = ballFixture.GetShape();
+        if (shape != null) {
+            return shape.TestPoint(ball.GetTransform(), new b2Vec2(x,y));
+        } else {
+            return false;
+        }
     }
 
     this.applyImpulse = function (dx, dy, cx, cy) {

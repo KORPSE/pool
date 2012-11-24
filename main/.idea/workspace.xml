@@ -20,19 +20,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Ball.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Ball.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ball.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="22" selection-start="279" selection-end="280" vertical-scroll-proportion="0.0">
+            <state line="35" column="25" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.7291667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="120" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.37336504">
+            <state line="31" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,13 +127,13 @@
         <option value="$PROJECT_DIR$/PositionStrategies.js" />
         <option value="$PROJECT_DIR$/Context.js" />
         <option value="$PROJECT_DIR$/World.js" />
-        <option value="$PROJECT_DIR$/Ball.js" />
         <option value="$PROJECT_DIR$/tests.html.js" />
         <option value="$PROJECT_DIR$/tests.html" />
         <option value="$PROJECT_DIR$/pool.html" />
         <option value="$PROJECT_DIR$/Utils.js" />
         <option value="$PROJECT_DIR$/tests.js" />
         <option value="$PROJECT_DIR$/UserController.js" />
+        <option value="$PROJECT_DIR$/Ball.js" />
       </list>
     </option>
   </component>
@@ -362,7 +362,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/Box2dWeb-2.1.a.3.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="396" selection-start="87508" selection-end="87508" vertical-scroll-proportion="0.5708583" />
+        <state line="174" column="396" selection-start="87508" selection-end="87508" vertical-scroll-proportion="0.5708583">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PositionStrategies.js">
@@ -372,24 +374,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Box2dWeb-2.1.a.3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5701" column="6" selection-start="215064" selection-end="215064" vertical-scroll-proportion="0.3326886" />
+        <state line="5701" column="6" selection-start="215064" selection-end="215064" vertical-scroll-proportion="0.3326886">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BallFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" />
+        <state line="5" column="9" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/World.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="228" column="30" selection-start="7528" selection-end="7528" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="279" selection-end="280" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -455,7 +454,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="120" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.37336504">
+        <state line="31" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="25" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.7291667">
           <folding />
         </state>
       </provider>
