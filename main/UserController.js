@@ -34,7 +34,7 @@ function UserController(elm, ball) {
         x = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
         y = (Event.pointerY(e) - elm.offsetTop) / SCALE;
         var ballVec = ball.getBody().GetPosition();
-        if (Utils.calculateAngle(new b2Vec2(x0 - ballVec.x, y0 - ballVec.y), new b2Vec2(x - x0, y - y0)) < Math.PI / 2) {
+        if (Utils.calculateAngle(new b2Vec2(x0 - ballVec.x, y0 - ballVec.y), new b2Vec2(x - x0, y - y0)) < Math.PI / 2.3) {
             if(pressed) {
                 dx = x0 - x;
                 dy = y0 - y;
