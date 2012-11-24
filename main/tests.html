@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script type="text/javascript" src="lib/excanvas.js"></script><![endif]-->
+    <script src="lib/prototype-1.6.0.2.js"></script>
+
+    <!-- box2djs -->
+    <script type="text/javascript" src="lib/Box2dWeb-2.1.a.3.js"></script>
+    <style>
+        #canvas {
+            top:260px;
+            left:125px;
+            background-color:#333333;
+        }
+        #centr {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="lib/qunit-1.10.0.css">
+    <title>KORPSE box2d test</title>
+</head>
+<body>
+<div id="centr">
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <div id="qunit"></div>
+</div>
+<script language="javascript" src="Utils.js"></script>
+<script language="javascript" src="Context.js"></script>
+<script language="javascript" src="World.js"></script>
+<script language="javascript" src="Ball.js"></script>
+<script language="javascript" src="UserController.js"></script>
+<script language="javascript" src="BallFactory.js"></script>
+<script language="javascript" src="PositionStrategies.js"></script>
+<script language="javascript" src="PocketContactListener.js"></script>
+<script language="javascript" src="korpse.js"></script>
+<script src="lib/qunit-1.10.0.js"></script>
+<script src="tests.js"></script>
+
+</body>
+</html>

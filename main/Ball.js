@@ -16,7 +16,7 @@ function Ball(world, x, y) {
     fixDef.restitution = BALL_RESTITUTION;
     bodyDef.type = b2Body.b2_dynamicBody;
     bodyDef.linearDamping = BALL_DAMPING;
-    bodyDef.angularDamping = BALL_DAMPING * 2;
+    bodyDef.angularDamping = BALL_DAMPING * 3;
     fixDef.shape = new b2CircleShape(BALL_RADIUS);
     bodyDef.position.x = x;
     bodyDef.position.y = y;
