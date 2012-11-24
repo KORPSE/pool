@@ -3,7 +3,7 @@
  * Date: 05.11.12
  * Time: 23:39
  */
-function UserController(elm, ball) {
+function UserController(elm, ball, world) {
     var x0, y0;
     var x, y;
     var cx, cy;
@@ -17,7 +17,7 @@ function UserController(elm, ball) {
         dx = 0;
         dy = 0;
 
-        if (ball.testPoint(x0, y0)) {
+        if (ball.testPoint(x0, y0) && world.isAllBallsSleep()) {
             pressed = true
         }
 
@@ -39,7 +39,7 @@ function UserController(elm, ball) {
                 dx = x0 - x;
                 dy = y0 - y;
                 var alpha = Math.atan2(dy, dx);
-                var vecLen = Math.sqrt(dx * dx + dy * dy);
+                var vecLen = (new b2Vec2(dx, dy)).Length();
                 if (vecLen > 3) {
                     dx = 3 * Math.cos(alpha);
                     dy = 3 * Math.sin(alpha);
@@ -67,7 +67,7 @@ function UserController(elm, ball) {
             context.lineTo(x * SCALE, y * SCALE);
             context.strokeStyle = '#ff0000';
             context.stroke();
-        } else if (ball.testPoint(x, y)) {
+        } else if (ball.testPoint(x, y) && world.isAllBallsSleep()) {
             var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(x, y));
             context.beginPath();
             context.arc(p.x * SCALE, p.y * SCALE, 0.1 * SCALE, 0 , 2 * Math.PI, false);

@@ -23,7 +23,7 @@ Event.observe(window, 'load', function() {
     listener = new PocketContactListener(world.getWorld());
     world.getWorld().SetContactListener(listener);
 
-    controller = new UserController(canvasElm, ball);
+    controller = new UserController(canvasElm, ball, world);
     world.setController(controller);
 
     //ball.applyImpulse(5, 5);

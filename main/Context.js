@@ -27,8 +27,8 @@ const SCALE = 30;
  * Ball constants
  */
 const BALL_RADIUS = 0.35;
-const BALL_DAMPING = 0.6;
-const BALL_FORCECOEFF = 5;
+const BALL_DAMPING = 0.7;
+const BALL_FORCECOEFF = 4;
 const BALL_RESTITUTION = 1;
 
 /**

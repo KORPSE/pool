@@ -13,6 +13,8 @@ function World(ctx, canvasWidth, canvasHeight) {
     var pockets = new Array();
     var bodiesToDestroy = new Array();
 
+    var sleepState = false;
+
     var world =  new b2World(
         new b2Vec2(0, 0),   // Вектор гравитации.
         true                // doSleep флаг.
@@ -197,7 +199,11 @@ function World(ctx, canvasWidth, canvasHeight) {
         bodiesToDestroy.push(body);
     }
 
-    this.update = function() {
+    this.isAllBallsSleep = function () {
+        return sleepState;
+    }
+
+    this.update = function () {
 
         world.Step(1/60, 20);
         world.DrawDebugData();
@@ -211,8 +217,8 @@ function World(ctx, canvasWidth, canvasHeight) {
             var pocket = ballPocket.pocket;
             var vec0 = ball.GetPosition();
             var vec1 = pocket.GetPosition();
-            var vec = new b2Vec2(vec0.x - vec1.x, vec0.y - vec1.y);
-            var len = Math.sqrt(vec.x * vec.x + vec.y * vec.y);
+            vec0.Subtract(vec1);
+            var len = vec0.Length();
             var pocketRadius = pocket.GetFixtureList().GetShape().GetRadius();
             if (len < BALL_RADIUS + pocketRadius - BALL_RADIUS / 2) {
                 console.log("ball goes away");
@@ -237,6 +243,15 @@ function World(ctx, canvasWidth, canvasHeight) {
         if (controller != null) {
             controller.drawLine();
         }
+
+        var r = true;
+        for (var body = world.GetBodyList(); body != null; body = body.GetNext()) {
+            if (body.GetUserData() instanceof BallData && body.IsAwake()) {
+                r = false;
+                break;
+            }
+        }
+        sleepState = r;
     }
 
     this.initWorld = function () {
