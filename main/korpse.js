@@ -11,10 +11,10 @@ Event.observe(window, 'load', function() {
     var canvasHeight = parseInt(canvasElm.height);
 
     world = new World(ctx, canvasWidth, canvasHeight);
-    world.initWorld();
+
     ballFactory = new BallFactory(world);
 
-    var ball = ballFactory.createBall(3, 6.5);
+    var ball = ballFactory.createBall(3, 6.5, true);
 
     var strategy = new RhombStrategy();
 
@@ -26,6 +26,10 @@ Event.observe(window, 'load', function() {
     controller = new UserController(canvasElm, ball, world);
     world.setController(controller);
 
+    var render = new Render(ctx, canvasWidth, canvasHeight);
+    world.setRender(render);
+
+    world.initWorld();
     //ball.applyImpulse(5, 5);
     //ball1.applyImpulse(5, -5);
 

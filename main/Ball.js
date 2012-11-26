@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-function Ball(world, x, y) {
+function Ball(world, x, y, isCue) {
 
     var bodyDef = new b2BodyDef;
     var fixDef = new b2FixtureDef;
@@ -21,7 +21,7 @@ function Ball(world, x, y) {
     bodyDef.position.x = x;
     bodyDef.position.y = y;
     var ball = world.getWorld().CreateBody(bodyDef);
-    ball.SetUserData(new BallData(this));
+    ball.SetUserData(new BallData(this, isCue));
     var ballFixture = ball.CreateFixture(fixDef);
 
     this.getBody = function () {

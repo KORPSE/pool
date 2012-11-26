@@ -20,6 +20,8 @@ function World(ctx, canvasWidth, canvasHeight) {
         true                // doSleep флаг.
     );
 
+    var render;
+
     function initDraw() {
         var debugDraw = new b2DebugDraw();
 
@@ -28,7 +30,7 @@ function World(ctx, canvasWidth, canvasHeight) {
         debugDraw.SetFillAlpha(0.5);
         debugDraw.SetLineThickness(1.0);
         debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-        world.SetDebugDraw(debugDraw);
+        //world.SetDebugDraw(debugDraw);
         draw();
     }
 
@@ -195,6 +197,10 @@ function World(ctx, canvasWidth, canvasHeight) {
         controller = c;
     }
 
+    this.setRender = function (r) {
+        render = r;
+    }
+
     this.addToDestroy = function (body) {
         bodiesToDestroy.push(body);
     }
@@ -206,7 +212,11 @@ function World(ctx, canvasWidth, canvasHeight) {
     this.update = function () {
 
         world.Step(1/60, 20);
-        world.DrawDebugData();
+        //world.DrawDebugData();
+        if (render != null) {
+            render.DrawRender(world.GetBodyList());
+        }
+
         world.ClearForces();
 
         var newBodiesToDestroy = new Array();

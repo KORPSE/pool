@@ -48,12 +48,30 @@ function PocketData() {
     }
 }
 
-function BallData(b) {
+function BallData(b, isCue) {
     this.getType = function () {
         return BALL;
     }
     this.ball = b;
     this.onBorder = false;
+
+    this.image = new Image();
+    if (isCue) {
+        this.image.src = "resources/sprites/ball.png";
+    } else {
+        var rnd = Math.floor(Math.random() * 3);
+        switch (rnd) {
+            case 0 :
+                this.image.src = "resources/sprites/ball_red.png";
+                break;
+            case 1 :
+                this.image.src = "resources/sprites/ball_blue.png";
+                break;
+            case 2 :
+                this.image.src = "resources/sprites/ball_green.png";
+                break;
+        }
+    }
 }
 
 function WallData() {
