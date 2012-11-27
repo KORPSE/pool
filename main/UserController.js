@@ -59,7 +59,7 @@ function UserController(elm, ball, world) {
         pressed = false;
     });
 
-    this.drawLine = function() {
+    this.drawControlSight = function() {
         var context = elm.getContext('2d');
         if (pressed && readyToRelease) {
             context.beginPath();

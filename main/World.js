@@ -30,7 +30,7 @@ function World(ctx, canvasWidth, canvasHeight) {
         debugDraw.SetFillAlpha(0.5);
         debugDraw.SetLineThickness(1.0);
         debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-        //world.SetDebugDraw(debugDraw);
+        world.SetDebugDraw(debugDraw);
         draw();
     }
 
@@ -251,7 +251,7 @@ function World(ctx, canvasWidth, canvasHeight) {
         }
 
         if (controller != null) {
-            controller.drawLine();
+            controller.drawControlSight();
         }
 
         var r = true;

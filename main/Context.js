@@ -42,11 +42,20 @@ const WORLD_FRICTION = 0.5;
 const WORLD_RESTITUTION = 0.9;
 const WORLD_MIN_SPEED = 0.15;
 
+
+var ballCount = 0;
+
 function PocketData() {
     this.getType = function () {
         return POCKET;
     }
 }
+
+var ballImages = [
+    "resources/sprites/ball_red.png",
+    "resources/sprites/ball_blue.png",
+    "resources/sprites/ball_green.png"
+]
 
 function BallData(b, isCue) {
     this.getType = function () {
@@ -60,17 +69,8 @@ function BallData(b, isCue) {
         this.image.src = "resources/sprites/ball.png";
     } else {
         var rnd = Math.floor(Math.random() * 3);
-        switch (rnd) {
-            case 0 :
-                this.image.src = "resources/sprites/ball_red.png";
-                break;
-            case 1 :
-                this.image.src = "resources/sprites/ball_blue.png";
-                break;
-            case 2 :
-                this.image.src = "resources/sprites/ball_green.png";
-                break;
-        }
+        this.image.src = ballImages[ballCount % ballImages.size()];
+        ballCount++;
     }
 }
 

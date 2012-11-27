@@ -23,7 +23,7 @@
       <file leaf-file-name="tests.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="675" selection-end="730" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
@@ -38,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Context.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="9" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.93935794">
+            <state line="71" column="48" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,16 +68,16 @@
       <file leaf-file-name="pool.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="45" selection-start="886" selection-end="886" vertical-scroll-proportion="-18.961538">
+            <state line="14" column="0" selection-start="337" selection-end="388" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="35" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.0">
+            <state line="61" column="13" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.62663496">
               <folding />
             </state>
           </provider>
@@ -95,7 +95,7 @@
       <file leaf-file-name="World.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/World.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="10" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
+            <state line="215" column="29" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,9 +105,7 @@
         <entry file="file://$PROJECT_DIR$/Render.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="11" column="24" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc;n#Render#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,17 +124,17 @@
         <option value="$PROJECT_DIR$/PocketContactListener.js" />
         <option value="$PROJECT_DIR$/PositionStrategies.js" />
         <option value="$PROJECT_DIR$/tests.html.js" />
-        <option value="$PROJECT_DIR$/tests.html" />
         <option value="$PROJECT_DIR$/Utils.js" />
         <option value="$PROJECT_DIR$/tests.js" />
-        <option value="$PROJECT_DIR$/UserController.js" />
-        <option value="$PROJECT_DIR$/pool.html" />
-        <option value="$PROJECT_DIR$/World.js" />
         <option value="$PROJECT_DIR$/Render.js" />
         <option value="$PROJECT_DIR$/Ball.js" />
-        <option value="$PROJECT_DIR$/Context.js" />
         <option value="$PROJECT_DIR$/korpse.js" />
         <option value="$PROJECT_DIR$/BallFactory.js" />
+        <option value="$PROJECT_DIR$/pool.html" />
+        <option value="$PROJECT_DIR$/tests.html" />
+        <option value="$PROJECT_DIR$/World.js" />
+        <option value="$PROJECT_DIR$/Context.js" />
+        <option value="$PROJECT_DIR$/UserController.js" />
       </list>
     </option>
   </component>
@@ -194,7 +192,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,6 +223,20 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="box2dweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sprites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -233,17 +244,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Confirmation" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pool.html" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pool.html" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -310,8 +322,8 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.34988454" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.6420323" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.3556582" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.63625866" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -419,13 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="675" selection-end="730" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PocketContactListener.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="1" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
@@ -433,33 +438,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="35" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pool.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="45" selection-start="886" selection-end="886" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/World.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="10" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Render.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="24" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc;n#Render#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -484,9 +466,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pool.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="337" selection-end="388" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/World.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="215" column="29" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="9" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.93935794">
+        <state line="71" column="48" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="13" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.62663496">
           <folding />
         </state>
       </provider>
