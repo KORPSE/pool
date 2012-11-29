@@ -8,36 +8,61 @@ function UserController(elm, ball, world) {
     var x, y;
     var cx, cy;
     var dx, dy;
-    var pressed = false;
-    var readyToRelease = false
+
+    const PRESSED = 1;
+    const RELEASED = 2;
+    const FREE = 0;
+
+    var state = FREE;
+
+
+    var stop = function (stop) {
+        x0 = null; y0 = null;
+        x = null; y = null;
+        if (stop) {
+            state = FREE;
+        }
+    }
+
+    Event.observe(elm, 'contextmenu', function(e) {
+        stop(true);
+        e.stop();
+    });
+
 
     Event.observe(elm, 'mousedown', function(e) {
-        x0 = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
-        y0 = (Event.pointerY(e) - elm.offsetTop) / SCALE;
-        dx = 0;
-        dy = 0;
+        var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
+        var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
 
-        if (ball.testPoint(x0, y0) && world.isAllBallsSleep()) {
-            pressed = true
+        if (state == FREE) {
+            if (ball.testPoint(mx, my) && world.isAllBallsSleep()) {
+                state = PRESSED;
+            }
+        } else if (state == RELEASED) {
+            stop(true);
+            if (Event.isLeftClick(e)) {
+                ball.applyImpulse(dx, dy, cx, cy);
+            }
         }
 
-        var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(x0, y0));
-
-        x0 = p.x;
-        y0 = p.y;
-
-        cx = ball.getBody().GetPosition().x - x0;
-        cy = ball.getBody().GetPosition().y - y0;
     });
 
     Event.observe(document, 'mousemove', function(e) {
-        x = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
-        y = (Event.pointerY(e) - elm.offsetTop) / SCALE;
+        var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
+        var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
         var ballVec = ball.getBody().GetPosition();
-        if (Utils.calculateAngle(new b2Vec2(x0 - ballVec.x, y0 - ballVec.y), new b2Vec2(x - x0, y - y0)) < Math.PI / 2.3) {
-            if(pressed) {
-                dx = x0 - x;
-                dy = y0 - y;
+
+        if(state == PRESSED || state == FREE) {
+            var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(mx, my));
+
+            x0 = p.x;
+            y0 = p.y;
+        }
+
+        if(state == PRESSED) {
+            if (!ball.testPoint(mx, my)) {
+                dx = x0 - mx;
+                dy = y0 - my;
                 var alpha = Math.atan2(dy, dx);
                 var vecLen = (new b2Vec2(dx, dy)).Length();
                 if (vecLen > 3) {
@@ -45,34 +70,55 @@ function UserController(elm, ball, world) {
                     dy = 3 * Math.sin(alpha);
                     x = x0 - dx;
                     y = y0 - dy;
+                } else  if (!ball.testPoint(mx, my)) {
+                    x = mx;
+                    y = my;
                 }
+            } else {
+                stop(false);
             }
-            readyToRelease = true;
-        } else {
-            readyToRelease = false;
+        } else if (state == RELEASED) {
+            var ballVec = ball.getBody().GetPosition();
+            var p = Utils.calculateImpulsePoint(ballVec, new b2Vec2(mx, my));
+            if (Utils.calculateAngle(new b2Vec2(p.x - ballVec.x, p.y - ballVec.y), new b2Vec2(-dx, -dy)) < Math.PI / 2.3) {
+                x0 = p.x; y0 = p.y;
+                x = x0 - dx; y = y0 - dy;
+            }
         }
     });
+
     Event.observe(document, 'mouseup', function(e) {
-        if(pressed && readyToRelease) {
-            ball.applyImpulse(dx, dy, cx, cy);
+
+        var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
+        var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
+
+        if (state == PRESSED ) {
+            if (!ball.testPoint(mx, my)) {
+                cx = ball.getBody().GetPosition().x - x0;
+                cy = ball.getBody().GetPosition().y - y0;
+                state = RELEASED;
+            } else {
+                stop(true);
+            }
         }
-        pressed = false;
     });
 
     this.drawControlSight = function() {
         var context = elm.getContext('2d');
-        if (pressed && readyToRelease) {
-            context.beginPath();
-            context.moveTo(x0 * SCALE, y0 * SCALE);
-            context.lineTo(x * SCALE, y * SCALE);
-            context.strokeStyle = '#ff0000';
-            context.stroke();
-        } else if (ball.testPoint(x, y) && world.isAllBallsSleep()) {
-            var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(x, y));
-            context.beginPath();
-            context.arc(p.x * SCALE, p.y * SCALE, 0.1 * SCALE, 0 , 2 * Math.PI, false);
-            context.strokeStyle = '#ff0000';
-            context.stroke();
+        if ((state == PRESSED || state == RELEASED) && world.isAllBallsSleep()) {
+            if (x != null && y != null && x0 != null && y0 != null) {
+                context.beginPath();
+                context.moveTo(x0 * SCALE, y0 * SCALE);
+                context.lineTo(x * SCALE, y * SCALE);
+                context.strokeStyle = '#eff800';
+                context.stroke();
+
+                var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(x0, y0));
+                context.beginPath();
+                context.arc(p.x * SCALE, p.y * SCALE, 0.1 * SCALE, 0 , 2 * Math.PI, false);
+                context.strokeStyle = '#eff800';
+                context.stroke();
+            }
         }
 
     }
