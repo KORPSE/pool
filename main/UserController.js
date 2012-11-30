@@ -30,7 +30,7 @@ function UserController(elm, ball, world) {
     });
 
 
-    Event.observe(elm, 'mousedown', function(e) {
+    Event.observe(document, 'mousedown', function(e) {
         var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
         var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
 

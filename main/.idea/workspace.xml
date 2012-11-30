@@ -20,19 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tests.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tests.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="55" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.7496933">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PocketContactListener.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PocketContactListener.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="1" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+            <state line="36" column="55" selection-start="1284" selection-end="1284" vertical-scroll-proportion="-23.538462">
               <folding />
             </state>
           </provider>
@@ -68,16 +59,16 @@
       <file leaf-file-name="pool.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="617" selection-end="1253" vertical-scroll-proportion="-16.346153">
+            <state line="25" column="0" selection-start="617" selection-end="1253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="46" selection-start="3410" selection-end="3410" vertical-scroll-proportion="-9.36">
+            <state line="32" column="26" selection-start="536" selection-end="536" vertical-scroll-proportion="0.40428063">
               <folding />
             </state>
           </provider>
@@ -110,6 +101,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="PocketContactListener.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PocketContactListener.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="1" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -133,8 +133,8 @@
         <option value="$PROJECT_DIR$/pool.html" />
         <option value="$PROJECT_DIR$/World.js" />
         <option value="$PROJECT_DIR$/Context.js" />
-        <option value="$PROJECT_DIR$/UserController.js" />
         <option value="$PROJECT_DIR$/tests.html" />
+        <option value="$PROJECT_DIR$/UserController.js" />
       </list>
     </option>
   </component>
@@ -192,6 +192,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,18 +245,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Confirmation" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pool.html" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pool.html" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -317,13 +317,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.36143187" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.630485" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.36720553" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.62471133" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -410,9 +410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="289" selection-end="303" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="18" selection-start="289" selection-end="303" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.js">
@@ -422,9 +420,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Box2dWeb-2.1.a.3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4190" column="23" selection-start="157942" selection-end="157962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="4190" column="23" selection-start="157942" selection-end="157962" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Render.js">
@@ -476,23 +472,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="46" selection-start="3410" selection-end="3410" vertical-scroll-proportion="-9.36">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="617" selection-end="1253" vertical-scroll-proportion="-16.346153">
+        <state line="25" column="0" selection-start="617" selection-end="1253" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="55" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.7496933">
+        <state line="36" column="55" selection-start="1284" selection-end="1284" vertical-scroll-proportion="-23.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="26" selection-start="536" selection-end="536" vertical-scroll-proportion="0.40428063">
           <folding />
         </state>
       </provider>
