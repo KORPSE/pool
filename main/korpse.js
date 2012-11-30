@@ -2,6 +2,7 @@
 var world;
 var ballFactory;
 var listener;
+var draw;
 var controller;
 
 Event.observe(window, 'load', function() {
@@ -23,7 +24,9 @@ Event.observe(window, 'load', function() {
     listener = new PocketContactListener(world.getWorld());
     world.getWorld().SetContactListener(listener);
 
-    controller = new UserController(canvasElm, ball, world);
+    draw = new ControlSightsDraw(ctx);
+
+    controller = new UserController(canvasElm, ball, world, draw);
     world.setController(controller);
 
     var render = new Render(ctx, canvasWidth, canvasHeight);

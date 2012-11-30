@@ -3,7 +3,7 @@
  * Date: 05.11.12
  * Time: 23:39
  */
-function UserController(elm, ball, world) {
+function UserController(elm, ball, world, controlSightDraw) {
     var x0, y0;
     var x, y;
     var cx, cy;
@@ -41,6 +41,10 @@ function UserController(elm, ball, world) {
         } else if (state == RELEASED) {
             stop(true);
             if (Event.isLeftClick(e)) {
+                if (!ball.testPoint(mx, my)) {
+                    cx = ball.getBody().GetPosition().x - x0;
+                    cy = ball.getBody().GetPosition().y - y0;
+                }
                 ball.applyImpulse(dx, dy, cx, cy);
             }
         }
@@ -94,8 +98,6 @@ function UserController(elm, ball, world) {
 
         if (state == PRESSED ) {
             if (!ball.testPoint(mx, my)) {
-                cx = ball.getBody().GetPosition().x - x0;
-                cy = ball.getBody().GetPosition().y - y0;
                 state = RELEASED;
             } else {
                 stop(true);
@@ -106,19 +108,7 @@ function UserController(elm, ball, world) {
     this.drawControlSight = function() {
         var context = elm.getContext('2d');
         if ((state == PRESSED || state == RELEASED) && world.isAllBallsSleep()) {
-            if (x != null && y != null && x0 != null && y0 != null) {
-                context.beginPath();
-                context.moveTo(x0 * SCALE, y0 * SCALE);
-                context.lineTo(x * SCALE, y * SCALE);
-                context.strokeStyle = '#eff800';
-                context.stroke();
-
-                var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(x0, y0));
-                context.beginPath();
-                context.arc(p.x * SCALE, p.y * SCALE, 0.1 * SCALE, 0 , 2 * Math.PI, false);
-                context.strokeStyle = '#eff800';
-                context.stroke();
-            }
+            controlSightDraw.drawControlSight(x0, y0, x, y, ball);
         }
 
     }

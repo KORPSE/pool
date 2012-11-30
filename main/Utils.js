@@ -6,13 +6,14 @@
 var Utils = {
 
     calculateImpulsePoint: function (pb, p) {
-        p.Add(pb.GetNegative());
-        var c = BALL_RADIUS / p.Length();
-        p.Multiply(c);
-        p.x += pb.x;
-        p.y += pb.y;
+        var p0 = new b2Vec2(p.x, p.y);
+        p0.Add(pb.GetNegative());
+        var c = BALL_RADIUS / p0.Length();
+        p0.Multiply(c);
+        p0.x += pb.x;
+        p0.y += pb.y;
 
-        return p;
+        return p0;
     },
 
     calculateAngle: function (v1, v2) {

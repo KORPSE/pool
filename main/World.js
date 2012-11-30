@@ -212,8 +212,10 @@ function World(ctx, canvasWidth, canvasHeight) {
     this.update = function () {
 
         world.Step(1/60, 20);
-        //world.DrawDebugData();
-        if (render != null) {
+        if (DEBUG_RENDER) {
+            world.DrawDebugData();
+        }
+        if (render != null && !DEBUG_RENDER) {
             render.DrawRender(world.GetBodyList());
         }
 

@@ -30,6 +30,7 @@ const BALL_RADIUS = 0.35;
 const BALL_DAMPING = 0.7;
 const BALL_FORCECOEFF = 4;
 const BALL_RESTITUTION = 1;
+const BALL_FRICTION = 0.4;
 
 /**
  * World constants
@@ -42,6 +43,7 @@ const WORLD_FRICTION = 0.5;
 const WORLD_RESTITUTION = 0.9;
 const WORLD_MIN_SPEED = 0.15;
 
+const DEBUG_RENDER = false;
 
 var ballCount = 0;
 

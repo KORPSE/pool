@@ -12,7 +12,7 @@ function Ball(world, x, y, isCue) {
     var fixDef = new b2FixtureDef;
 
     fixDef.density = 0.9;
-    fixDef.friction = 0.2;
+    fixDef.friction = BALL_FRICTION;
     fixDef.restitution = BALL_RESTITUTION;
     bodyDef.type = b2Body.b2_dynamicBody;
     bodyDef.linearDamping = BALL_DAMPING;
