@@ -15,12 +15,16 @@ function ControlSightsDraw(context) {
         var ps = new b2Vec2(p0.x, p0.y);
         var pn = new b2Vec2(p0.x + dx, p0.y + dy);
         var pn0 = new b2Vec2(dx, dy);
-        context.beginPath();
         var i = 0;
+        context.strokeStyle = '#cccccc';
+        context.lineWidth = 3;
         while (pn0.Length() < finLen) {
             if (i % 2 == 1) {
+                context.beginPath();
                 context.moveTo(ps.x * SCALE, ps.y * SCALE);
                 context.lineTo(pn.x * SCALE, pn.y * SCALE);
+                context.globalAlpha = 1 - (dashLen / finLen) * i;
+                context.stroke();
             }
             ps.Add(vdx);
             pn.Add(vdx);
@@ -31,12 +35,13 @@ function ControlSightsDraw(context) {
             context.moveTo((p0.x + dx * i) * SCALE, (p0.y + dy * i) * SCALE);
             context.lineTo(p1.x * SCALE, p1.y * SCALE);
         }
-        context.strokeStyle = '#cccccc';
-        context.stroke();
+        context.globalAlpha = 1;
     }
 
     this.drawControlSight = function(x0, y0, x, y, ball) {
         if (x != null && y != null && x0 != null && y0 != null) {
+            context.globalAlpha = 0.8;
+            context.lineWidth = 2;
             context.beginPath();
             context.moveTo(x0 * SCALE, y0 * SCALE);
             context.lineTo(x * SCALE, y * SCALE);
@@ -56,7 +61,11 @@ function ControlSightsDraw(context) {
             p1.Multiply(20 / p1.Length());
             p1.Add(p0);
             p0 = Utils.calculateImpulsePoint(p0, p1);
+            context.globalAlpha = 1;
+
             drawDashedLine(p0, p1);
+
+            context.lineWidth = 1;
         }
 
     }
