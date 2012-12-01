@@ -39,13 +39,13 @@ function UserController(elm, ball, world, controlSightDraw) {
                 state = PRESSED;
             }
         } else if (state == RELEASED) {
-            stop(true);
             if (Event.isLeftClick(e)) {
                 if (!ball.testPoint(mx, my)) {
                     cx = ball.getBody().GetPosition().x - x0;
                     cy = ball.getBody().GetPosition().y - y0;
                 }
                 ball.applyImpulse(dx, dy, cx, cy);
+                stop(true);
             }
         }
 
