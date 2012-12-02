@@ -4,6 +4,19 @@
  * Time: 0:40
  */
 
+function getStrategy(str) {
+    switch (str) {
+        case "triangle" :
+            return new TriangleStrategy();
+            break;
+        case "rhomb" :
+            return new RhombStrategy();
+            break;
+        default :
+            return new TriangleStrategy();
+    }
+}
+
 function BaseStrategy() {
     this.generate = function (startPoint) {}
 }

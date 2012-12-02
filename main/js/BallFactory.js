@@ -8,6 +8,8 @@ function BallFactory (world) {
     const INCREMENT_X = 10;
     const INCREMENT_Y = 2.5;
 
+    ballCount = 0;
+
     this.createBall = function (x, y, isCue) {
         return new Ball(world, x, y, isCue);
     }

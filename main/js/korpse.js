@@ -5,7 +5,11 @@ var listener;
 var draw;
 var controller;
 
-Event.observe(window, 'load', function() {
+function start (strategyName) {
+
+    if (world != null) {
+        clearInterval(world.interval);
+    }
     var ctx = $('canvas').getContext('2d');
     var canvasElm = $('canvas');
     var canvasWidth = parseInt(canvasElm.width);
@@ -17,7 +21,7 @@ Event.observe(window, 'load', function() {
 
     var ball = ballFactory.createBall(3, 6.5, true);
 
-    var strategy = new RhombStrategy();
+    var strategy = getStrategy(strategyName);
 
     ballFactory.createMany(strategy.generate(new b2Vec2(3.5, 4)));
 
@@ -33,10 +37,14 @@ Event.observe(window, 'load', function() {
     world.setRender(render);
 
     world.initWorld();
-    //ball.applyImpulse(5, 5);
-    //ball1.applyImpulse(5, -5);
+}
 
-    //window.setInterval(function() { world.update(); }, 1000 / 60);
-
-//    step();
+Event.observe(window, 'load', function() {
+    start("triangle");
+    $$("input[type=radio][name='strategy']").each(function (a) {
+        a.observe("change", function(event) {
+            var strategyName = Form.getInputs("strForm", "radio", "strategy").find(function(radio) { return radio.checked; }).value;
+            start(strategyName);
+        });
+    });
 });

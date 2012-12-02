@@ -287,8 +287,8 @@ function World(ctx, canvasWidth, canvasHeight) {
 
     this.initWorld = function () {
         initDraw();
-        x = this;
-        window.setInterval(function() { x.update(); }, 1000 / 60);
+        var x = this;
+        this.interval = window.setInterval(function() { x.update(); }, 1000 / 60);
     }
 
     this.checkPosition4Cue = function (x, y) {
