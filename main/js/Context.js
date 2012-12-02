@@ -54,12 +54,16 @@ function PocketData() {
 }
 
 var ballImages = [
+    "resources/sprites/ball.png",
     "resources/sprites/ball_red.png",
     "resources/sprites/ball_blue.png",
     "resources/sprites/ball_green.png"
 ]
 
 function BallData(b, isCue) {
+
+    this.isCue = isCue;
+
     this.getType = function () {
         return BALL;
     }
@@ -68,10 +72,10 @@ function BallData(b, isCue) {
 
     this.image = new Image();
     if (isCue) {
-        this.image.src = "resources/sprites/ball.png";
+        this.image.src = ballImages[0];
     } else {
-        var rnd = Math.floor(Math.random() * 3);
-        this.image.src = ballImages[ballCount % ballImages.size()];
+        var rnd = Math.floor(Math.random() * 3 + 1);
+        this.image.src = ballImages[ballCount % (ballImages.size() - 1) + 1];
         ballCount++;
     }
 }

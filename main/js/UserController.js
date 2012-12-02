@@ -3,7 +3,7 @@
  * Date: 05.11.12
  * Time: 23:39
  */
-function UserController(elm, ball, world, controlSightDraw) {
+function UserController(elm, ball, world, controlSightDraw, ballFactory) {
     var x0, y0;
     var x, y;
     var cx, cy;
@@ -12,6 +12,9 @@ function UserController(elm, ball, world, controlSightDraw) {
     const PRESSED = 1;
     const RELEASED = 2;
     const FREE = 0;
+
+    const NEWCUE = 3;
+    const NEWCUE_READY = 4;
 
     var state = FREE;
 
@@ -34,6 +37,10 @@ function UserController(elm, ball, world, controlSightDraw) {
         var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
         var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
 
+        /**
+         * Strike
+         */
+
         if (state == FREE) {
             if (ball.testPoint(mx, my) && world.isAllBallsSleep()) {
                 state = PRESSED;
@@ -49,12 +56,26 @@ function UserController(elm, ball, world, controlSightDraw) {
             }
         }
 
+        /**
+         * New cue
+         */
+        else if (state == NEWCUE_READY) {
+            if (world.newCueVec != null) {
+                ball = ballFactory.createBall(world.newCueVec.x, world.newCueVec.y, true);
+                world.newCueVec = null;
+                state = FREE;
+            }
+        }
+
     });
 
     Event.observe(document, 'mousemove', function(e) {
         var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
         var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
-        var ballVec = ball.getBody().GetPosition();
+
+        /**
+         * Strike
+         */
 
         if(state == PRESSED || state == FREE) {
             var p = Utils.calculateImpulsePoint(ball.getBody().GetPosition(), new b2Vec2(mx, my));
@@ -89,12 +110,30 @@ function UserController(elm, ball, world, controlSightDraw) {
                 x = x0 - dx; y = y0 - dy;
             }
         }
+
+        /**
+         * New cue
+         */
+        else if (state == NEWCUE || state == NEWCUE_READY) {
+            if (world.checkPosition4Cue(mx, my)) {
+                state = NEWCUE_READY;
+                world.newCueVec = new b2Vec2(mx, my);
+            } else {
+                state == NEWCUE;
+                world.newCueVec = null;
+            }
+        }
+
     });
 
     Event.observe(document, 'mouseup', function(e) {
 
         var mx = (Event.pointerX(e) - elm.offsetLeft) / SCALE;
         var my = (Event.pointerY(e) - elm.offsetTop) / SCALE;
+
+        /**
+         * Strike
+         */
 
         if (state == PRESSED ) {
             if (!ball.testPoint(mx, my)) {
@@ -103,6 +142,7 @@ function UserController(elm, ball, world, controlSightDraw) {
                 stop(true);
             }
         }
+
     });
 
     this.drawControlSight = function() {
@@ -111,6 +151,10 @@ function UserController(elm, ball, world, controlSightDraw) {
             controlSightDraw.drawControlSight(x0, y0, x, y, ball);
         }
 
+    }
+
+    this.newCueState = function () {
+        state = NEWCUE;
     }
 
 }

@@ -5,7 +5,7 @@
  */
 
 function Render(context, canvasWidth, canvasHeight) {
-    this.DrawRender = function (bodyList) {
+    this.drawRender = function (bodyList) {
         context.clearRect(0, 0, canvasWidth, canvasHeight);
         for (var body = bodyList; body != null; body = body.GetNext()) {
             if (body.GetUserData() instanceof BallData) {
@@ -16,5 +16,15 @@ function Render(context, canvasWidth, canvasHeight) {
                 context.drawImage(body.GetUserData().image, x, y, h, w);
             }
         }
+    }
+
+    this.renderCueSpriteOnly = function (v) {
+        var h = BALL_RADIUS * 2 * SCALE,
+            w = h,
+            x = (v.x - BALL_RADIUS) * SCALE,
+            y = (v.y  - BALL_RADIUS) * SCALE;
+        var image = new Image();
+        image.src = ballImages[0];
+        context.drawImage(image, x, y, h, w);
     }
 }

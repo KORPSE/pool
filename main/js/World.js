@@ -1,9 +1,7 @@
 /**
- * Created with JetBrains WebStorm.
  * User: KORPSE
  * Date: 05.11.12
  * Time: 12:59
- * To change this template use File | Settings | File Templates.
  */
 
 function World(ctx, canvasWidth, canvasHeight) {
@@ -209,18 +207,7 @@ function World(ctx, canvasWidth, canvasHeight) {
         return sleepState;
     }
 
-    this.update = function () {
-
-        world.Step(1/60, 20);
-        if (DEBUG_RENDER) {
-            world.DrawDebugData();
-        }
-        if (render != null && !DEBUG_RENDER) {
-            render.DrawRender(world.GetBodyList());
-        }
-
-        world.ClearForces();
-
+    var doDestroyBodies = function () {
         var newBodiesToDestroy = new Array();
 
         while(bodiesToDestroy.length > 0) {
@@ -234,6 +221,11 @@ function World(ctx, canvasWidth, canvasHeight) {
             var pocketRadius = pocket.GetFixtureList().GetShape().GetRadius();
             if (len < BALL_RADIUS + pocketRadius - BALL_RADIUS / 2) {
                 console.log("ball goes away");
+
+                if (ball.GetUserData().isCue) {
+                    controller.newCueState();
+                }
+
                 world.DestroyBody(ball);
             } else if (len < BALL_RADIUS + pocketRadius) {
                 newBodiesToDestroy.push(ballPocket);
@@ -242,8 +234,10 @@ function World(ctx, canvasWidth, canvasHeight) {
 
         bodiesToDestroy = newBodiesToDestroy;
 
-        var item = world.GetBodyList();
+    }
 
+    var doStopByMinSpeed = function () {
+        var item = world.GetBodyList();
         while (item != null) {
             if (item.GetLinearVelocity().Length() < WORLD_MIN_SPEED && item.GetLinearVelocity().Length() > 0) {
                 console.log("stop");
@@ -251,11 +245,9 @@ function World(ctx, canvasWidth, canvasHeight) {
             }
             item = item.GetNext();
         }
+    }
 
-        if (controller != null) {
-            controller.drawControlSight();
-        }
-
+    var doSetSleepState = function () {
         var r = true;
         for (var body = world.GetBodyList(); body != null; body = body.GetNext()) {
             if (body.GetUserData() instanceof BallData && body.IsAwake()) {
@@ -264,6 +256,33 @@ function World(ctx, canvasWidth, canvasHeight) {
             }
         }
         sleepState = r;
+
+    }
+
+    this.update = function () {
+
+        world.Step(1/60, 20);
+        if (DEBUG_RENDER) {
+            world.DrawDebugData();
+        }
+        if (render != null && !DEBUG_RENDER) {
+            render.drawRender(world.GetBodyList());
+            if (this.newCueVec != null) {
+                render.renderCueSpriteOnly(this.newCueVec);
+            }
+        }
+
+        world.ClearForces();
+
+        doDestroyBodies();
+
+        doStopByMinSpeed();
+
+        if (controller != null) {
+            controller.drawControlSight();
+        }
+
+        doSetSleepState();
     }
 
     this.initWorld = function () {
@@ -271,4 +290,28 @@ function World(ctx, canvasWidth, canvasHeight) {
         x = this;
         window.setInterval(function() { x.update(); }, 1000 / 60);
     }
+
+    this.checkPosition4Cue = function (x, y) {
+        if (x > WORLD_W + WORLD_BW && x < canvasWidth / SCALE - WORLD_W + WORLD_BW &&
+            y > WORLD_W + WORLD_BW && y < canvasHeight / SCALE - WORLD_W + WORLD_BW) {
+
+            var r = true;
+            for (var body = world.GetBodyList(); body != null; body = body.GetNext()) {
+                if (body.GetUserData() instanceof BallData) {
+                    var p0 = body.GetPosition();
+                    var p1 = new b2Vec2(x, y);
+                    p1.Subtract(p0);
+                    if (p1.Length() < 2 * BALL_RADIUS) {
+                        r = false;
+                        break;
+                    }
+                }
+            }
+
+            return r;
+
+        }
+    }
+
+    this.newCueVec = null;
 }

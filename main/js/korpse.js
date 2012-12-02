@@ -26,7 +26,7 @@ Event.observe(window, 'load', function() {
 
     draw = new ControlSightsDraw(ctx);
 
-    controller = new UserController(canvasElm, ball, world, draw);
+    controller = new UserController(canvasElm, ball, world, draw, ballFactory);
     world.setController(controller);
 
     var render = new Render(ctx, canvasWidth, canvasHeight);
