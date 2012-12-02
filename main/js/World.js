@@ -292,8 +292,8 @@ function World(ctx, canvasWidth, canvasHeight) {
     }
 
     this.checkPosition4Cue = function (x, y) {
-        if (x > WORLD_W + WORLD_BW && x < canvasWidth / SCALE - WORLD_W + WORLD_BW &&
-            y > WORLD_W + WORLD_BW && y < canvasHeight / SCALE - WORLD_W + WORLD_BW) {
+        if (x > WORLD_W + WORLD_BW + BALL_RADIUS && x < canvasWidth / SCALE - WORLD_W - WORLD_BW - BALL_RADIUS &&
+            y > WORLD_W + WORLD_BW + BALL_RADIUS && y < canvasHeight / SCALE - WORLD_W - WORLD_BW - BALL_RADIUS) {
 
             var r = true;
             for (var body = world.GetBodyList(); body != null; body = body.GetNext()) {

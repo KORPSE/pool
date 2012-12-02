@@ -47,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="28" selection-start="1621" selection-end="1621" vertical-scroll-proportion="1.25">
+            <state line="65" column="28" selection-start="1621" selection-end="1621" vertical-scroll-proportion="25.16">
               <folding />
             </state>
           </provider>
@@ -74,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="World.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/World.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="315" column="18" selection-start="9704" selection-end="9713" vertical-scroll-proportion="-27.2">
+            <state line="295" column="111" selection-start="9219" selection-end="9219" vertical-scroll-proportion="0.41666666">
               <folding />
             </state>
           </provider>
@@ -132,10 +132,10 @@
         <option value="$PROJECT_DIR$/tests.html" />
         <option value="$PROJECT_DIR$/js/ControlSightsDraw.js" />
         <option value="$PROJECT_DIR$/js/korpse.js" />
-        <option value="$PROJECT_DIR$/js/World.js" />
         <option value="$PROJECT_DIR$/js/Context.js" />
         <option value="$PROJECT_DIR$/js/Render.js" />
         <option value="$PROJECT_DIR$/js/UserController.js" />
+        <option value="$PROJECT_DIR$/js/World.js" />
       </list>
     </option>
   </component>
@@ -317,14 +317,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.6501155" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14604707" sideWeight="0.34180138" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14604707" sideWeight="0.6501155" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14604707" sideWeight="0.34180138" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995381" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32794458" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -487,16 +487,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/World.js">
+    <entry file="file://$PROJECT_DIR$/js/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="315" column="18" selection-start="9704" selection-end="9713" vertical-scroll-proportion="-27.2">
+        <state line="65" column="28" selection-start="1621" selection-end="1621" vertical-scroll-proportion="25.16">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/UserController.js">
+    <entry file="file://$PROJECT_DIR$/js/World.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="28" selection-start="1621" selection-end="1621" vertical-scroll-proportion="1.25">
+        <state line="295" column="111" selection-start="9219" selection-end="9219" vertical-scroll-proportion="0.41666666">
           <folding />
         </state>
       </provider>
